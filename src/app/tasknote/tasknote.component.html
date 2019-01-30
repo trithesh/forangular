@@ -1,0 +1,22 @@
+<div class="area ">
+  <label class="text-uppercase col-6">TASK</label><input [(ngModel)]="Task" type="text" class="input-group-text col-6"
+    placeholder="task name">
+
+  <label class="text-uppercase col-6">Description</label><textarea [(ngModel)]="des" class="input-group-text col-6"
+    placeholder="Describe the task"></textarea>
+
+  <button class="rounded btn btn-primary m-2" (click)="onCreate()">Create</button>
+  <br>
+  <div *ngIf="tasks; else noTask">
+    <ul>
+      <li>
+        <p>Task:{{Task}}<br>Description: {{des}} </p>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noTask>
+    <p>
+      No tasks are notted
+    </p>
+  </ng-template>
+</div>
